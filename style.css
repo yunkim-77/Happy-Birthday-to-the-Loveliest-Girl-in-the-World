@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    background: linear-gradient(135deg, #fce7f3, #fde2e4);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .book-wrapper {
+    width: 350px;
+    height: 500px;
+  }
+  
+  .page {
+    background: #fffafc;
+    padding: 25px;
+    font-family: 'Playfair Display', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .page h1 {
+    font-size: 2.2rem;
+  }
+  
+  .page h2 {
+    margin-bottom: 10px;
+  }
+  
+  .page p {
+    font-size: 1rem;
+  }
+  
+  .page img {
+    max-width: 100%;
+    border-radius: 12px;
+    margin: 10px 0;
+  }
+  
+  .page video {
+    width: 100%;
+    border-radius: 12px;
+  }
+  
+  .cover {
+    background: linear-gradient(135deg, #f472b6, #fb7185);
+    color: white;
+  }
+  
+  .cover h1, .cover h2 {
+    margin: 0;
+  }
+  
+  .cover p {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  ul li {
+    margin: 6px 0;
+  }
+  
