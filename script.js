@@ -8,7 +8,7 @@ const pageFlip = new St.PageFlip(
       showCover: true,
       mobileScrollSupport: false
     }
-  );
+  ); 
   
   pageFlip.loadFromHTML(document.querySelectorAll(".page"));
   
