@@ -13,8 +13,8 @@
   }
   
   .book-wrapper {
-    width: 3500px;
-    height: 5000px;
+    width: 50%;
+    height: 80%;
   }
   
   .page {
@@ -28,9 +28,39 @@
   }
   
   .page h1 {
-    font-size: 2.2rem;
+    font-size: 2.2vw;
+  }
+
+  .page h1.first{
+    font-size: 2.8vmin;
   }
   
+  .page h1.second{
+    font-size: 1vmin;
+  }  
+
+  .page h1.third{
+    font-size: 1.2vw;
+  }  
+  .page h1.fourth{
+    font-size: 1.4vw;
+  } 
+  .page h1.fifth{
+    font-size: 1.6vw;
+  }  
+  .page h1.sixth{
+    font-size: 1.8vw;
+  }  
+  .page h1.seventh{
+    font-size: 2vw;
+  }  
+  .page h1.eigth{
+    font-size: 2.2vw;
+  }
+
+
+
+
   .page h2 {
     margin-bottom: 10px;
   }
@@ -53,6 +83,8 @@
   .cover {
     background: linear-gradient(135deg, #f472b6, #fb7185);
     color: white;
+    position: relative;
+    padding-top: 100px; /* moves the text down */
   }
   
   .cover h1, .cover h2 {
