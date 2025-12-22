@@ -1,108 +1,63 @@
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    margin: 0;
-    background: linear-gradient(135deg, #fce7f3, #fde2e4);
-    font-family: 'Inter', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .book-wrapper {
-    width: 50%;
-    height: 80%;
-  }
-  
-  .page {
-    background: #fffafc;
-    padding: 25px;
-    font-family: 'Playfair Display', serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-  }
-  
-  .page h1 {
-    font-size: 2.2vw;
-  }
+  box-sizing: border-box;
+}
 
-  .page h1.first{
-    font-size: 2.8vmin;
-  }
-  
-  .page h1.second{
-    font-size: 1vmin;
-  }  
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(135deg, #fce7f3, #fde2e4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .page h1.third{
-    font-size: 1.2vw;
-  }  
-  .page h1.fourth{
-    font-size: 1.4vw;
-  } 
-  .page h1.fifth{
-    font-size: 1.6vw;
-  }  
-  .page h1.sixth{
-    font-size: 1.8vw;
-  }  
-  .page h1.seventh{
-    font-size: 2vw;
-  }  
-  .page h1.eigth{
-    font-size: 2.2vw;
-  }
+.page-content {
+  background: white;
+  width: 90vw;
+  max-width: 500px;
+  padding: 40px;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
 
+/* Cover page */
+.cover {
+  background: linear-gradient(135deg, #f472b6, #fb7185);
+  color: white;
+}
 
+/* Your existing font sizes */
+h1.first { font-size: 5vh; }
+h1.second { font-size: 2vh; }
+h1.third { font-size: 2.4vh; }
+h1.fourth { font-size: 2.8vh; }
+h1.fifth { font-size: 3.2vh; }
+h1.sixth { font-size: 3.6vh; }
+h1.seventh { font-size: 4vh; }
+h1.eighth { font-size: 4.4vh; }
 
+/* Media */
+img, video {
+  max-width: 100%;
+  border-radius: 12px;
+}
 
-  .page h2 {
-    margin-bottom: 10px;
-  }
-  
-  .page p {
-    font-size: 1rem;
-  }
-  
-  .page img {
-    max-width: 100%;
-    border-radius: 12px;
-    margin: 10px 0;
-  }
-  
-  .page video {
-    width: 100%;
-    border-radius: 12px;
-  }
-  
-  .cover {
-    background: linear-gradient(135deg, #f472b6, #fb7185);
-    color: white;
-    position: relative;
-    padding-top: 100px; /* moves the text down */
-  }
-  
-  .cover h1, .cover h2 {
-    margin: 0;
-  }
-  
-  .cover p {
-    margin-top: 20px;
-    font-size: 0.9rem;
-    opacity: 0.9;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  ul li {
-    margin: 6px 0;
-  }
-  
+/* Next button */
+.next-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 24px;
+  background: white;
+  color: #fb7185;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.next-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
