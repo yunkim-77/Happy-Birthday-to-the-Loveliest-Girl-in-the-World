@@ -15,7 +15,7 @@ body {
 .page-content {
   background: white;
   width: 90vw;
-  max-width: 500px;
+  max-width: 90vh;
   padding: 40px;
   border-radius: 24px;
   text-align: center;
@@ -27,6 +27,7 @@ body {
   background: linear-gradient(135deg, #f472b6, #fb7185);
   color: white;
   margin-top: 5vh;
+  width: 55vh;
 }
 
 .cover .candle{
@@ -87,16 +88,10 @@ body {
 
 
 .cover .plate {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -52%);
-
-  width: 60vh;
-  max-width: none;
+  width: 32vh;
   height: auto;
-
-  pointer-events: none; /* optional */
+  margin-top: -2vh;
+  margin-bottom: -2vh;
 }
 
 
