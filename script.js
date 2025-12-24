@@ -1,14 +1,12 @@
-const pageFlip = new St.PageFlip(
-    document.getElementById("book"),
-    {
-      width: 350,
-      height: 500,
-      size: "stretch",
-      maxShadowOpacity: 0.5,
-      showCover: true,
-      mobileScrollSupport: false
-    }
-  ); 
-  
-  pageFlip.loadFromHTML(document.querySelectorAll(".page"));
-  
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll("img[data-sound]").forEach(img => {
+    const audio = new Audio(img.dataset.sound);
+
+    img.addEventListener("click", () => {
+      audio.currentTime = 0;
+      audio.play().catch(err => {
+        console.log("Audio play failed:", err);
+      });
+    });
+  });
+});
