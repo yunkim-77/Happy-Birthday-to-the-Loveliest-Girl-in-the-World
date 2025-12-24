@@ -28,13 +28,27 @@ body {
   color: white;
   margin-top: 5vh;
   width: 55vh;
+  pointer-events: auto;
 }
 
 .cover .candle{
   width: 7vh;
+  pointer-events: auto;
   height: auto;
   margin-bottom: -2.5vh;
 }
+
+.cover .blow{
+  position: absolute;
+  width: 15vh;
+  top: 20vh;
+  left: 52%;
+  pointer-events: auto;
+  height: auto;
+  margin-left: 0vh;
+  margin-bottom: -2.5vh;
+}
+
 
 .cover .strawberries{
   width: 30vh;
@@ -128,4 +142,23 @@ img, video {
 .next-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+
+.heart {
+  position: fixed;
+  font-size: 26px;
+  pointer-events: none;
+  animation: heartPop 2.5s ease-out forwards;
+}
+
+@keyframes heartPop {
+  0% {
+    transform: translateY(0) scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-80vh) scale(1.3);
+    opacity: 0;
+  }
 }
