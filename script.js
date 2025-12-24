@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
         setTimeout(() => {
           // Play confetti sound
           const audio = new Audio("assets/music/confetti.mp3");
+          audio.volume = 0.5;
           audio.play();
 
           // Launch confetti
@@ -39,7 +40,6 @@ document.addEventListener("DOMContentLoaded", () => {
           });
         }, delay);
         const heartPopTemplate = new Audio("assets/music/heartpop.mp3");
-        heartPopTemplate.volume = 0.1;
         function playHeartPop() {
           const pop = heartPopTemplate.cloneNode();
           pop.volume = 0.1;
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
           setTimeout(() => {
             clearInterval(heartInterval);
-          }, 3000);
+          }, 2500);
         }, delay3);
                 
 
@@ -83,5 +83,4 @@ document.addEventListener("DOMContentLoaded", () => {
     img.addEventListener("click", handleClick);
   });
 });
-
 
