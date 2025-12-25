@@ -182,10 +182,10 @@
       h1{
         font-size: small;
         font-family: cursive;
-        position: absolute;
-        top: 54%;
-        left: 32%;
-      }
+        position: relative;
+        margin-top: -20vh;
+        margin-bottom: 10vh;
+          }
     
 
 }
