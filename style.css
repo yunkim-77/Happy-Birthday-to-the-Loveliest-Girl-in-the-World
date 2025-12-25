@@ -144,7 +144,9 @@ img, video {
   box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
-
+.page1button{
+  margin-left: 1vh;
+}
 .heart {
   position: fixed;
   font-size: 26px;
@@ -164,9 +166,39 @@ img, video {
 }
 
 
+
+.forddescription{
+  width: 30vh;
+  height: auto;
+  font-size: small;
+  margin-bottom: -10vh;
+  margin-left: 0vh;
+  margin-top: 8vh;
+}
+
+.ford{
+  width: 25vh;
+  height: auto;
+  margin-left: -15vh;
+  margin-top: -2vh;
+  margin-right: 4vh;
+  margin-bottom: 5vh;
+}
+
+.forddescription2{
+  width: 30vh;
+  height: auto;
+  font-size: small;
+  margin-bottom: 0vh;
+  margin-left:0vh;
+  margin-top: 0vh;
+  margin-right: 0vh;
+}
+
+
 .sideeye{
   position: absolute;
-  top:50vh;
+  top:65vh;
   width: 16vh;
   height: auto;
   margin-top: -20vh;
@@ -189,4 +221,76 @@ img, video {
 
 .shake {
   animation: shake 0.5s ease-in-out;
+}
+
+.smile-container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 100px auto;
+}
+
+.center-smile {
+  position: absolute;
+  width: 50vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+}
+
+.orbiter {
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+}
+
+
+/* Orbiting images */
+.orbit img {
+  position: absolute;
+  width: 70px;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  animation: fade 6s ease-in-out forwards;
+}
+
+
+/* Fade in → out */
+@keyframes fade {
+  0% { opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.text1{
+  width: 20vh;
+}
+
+
+.text2{
+  width: 20vh;
+
+}
+
+
+.text3{
+  width: 20vh;
+
+}
+
+
+.text4{
+  width: 20vh;
+
 }
