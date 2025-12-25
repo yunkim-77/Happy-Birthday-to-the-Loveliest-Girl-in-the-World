@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
           const delay2 = 500;
   
           setTimeout(() => {
-            const audio = new Audio("assets/music/happybirthday.mp3");
+            const audio = new Audio("assets/audio/happybirthday.mp3");
             audio.play();
           }, delay2);
         }
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
           setTimeout(() => {
             // Play confetti sound
-            const audio = new Audio("assets/music/confetti.mp3");
+            const audio = new Audio("assets/audio/confetti.mp3");
             audio.volume = 0.5;
             audio.play();
   
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
               origin: { y: 0.6 },
             });
           }, delay);
-          const heartPopTemplate = new Audio("assets/music/heartpop.mp3");
+          const heartPopTemplate = new Audio("assets/audio/heartpop.mp3");
           function playHeartPop() {
             const pop = heartPopTemplate.cloneNode();
             pop.volume = 0.1;

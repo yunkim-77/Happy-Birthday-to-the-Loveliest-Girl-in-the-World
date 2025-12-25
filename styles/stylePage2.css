@@ -1,125 +1,39 @@
-
-@media (min-width: 769px){
-
-  .forddescription{
-    width: 30vh;
-    height: auto;
-    font-size: small;
-    margin-bottom: -10vh;
-    margin-left: 0vh;
-    margin-top: 8vh;
-  }
-  
-  .ford{
-    width: 25vh;
-    height: auto;
-    margin-left: -15vh;
-    margin-top: -2vh;
-    margin-right: 4vh;
-    margin-bottom: 5vh;
-  }
-  
-  .forddescription2{
-    width: 30vh;
-    height: auto;
-    font-size: small;
-    margin-bottom: 0vh;
-    margin-left:0vh;
-    margin-top: 0vh;
-    margin-right: 0vh;
-  }
-  
-  
-  .sideeye{
-    position: absolute;
-    top:65vh;
-    width: 16vh;
-    height: auto;
-    margin-top: -20vh;
-    margin-bottom: -7vh;
-  }
-  
-  
-  .sideeye:hover{
-    opacity: 0.5;
-  }
-  
-  @keyframes shake {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    20% { transform: translate(-2px, 2px) rotate(-2deg); }
-    40% { transform: translate(2px, -2px) rotate(2deg); }
-    60% { transform: translate(-2px, 2px) rotate(-2deg); }
-    80% { transform: translate(2px, -2px) rotate(2deg); }
-    100% { transform: translate(0, 0) rotate(0deg); }
-  }
-  
-  .shake {
-    animation: shake 0.5s ease-in-out;
-  }
-  
+#grid {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr); /* 9 columns */
+    gap: 2px;
+    max-width: 95vw;
+    margin: 20px auto;
 }
 
-@media (max-width: 768px) {
-  .forddescription{
-    width: 25vh;
-    height: auto;
-    font-size: small;
-    margin-bottom: -10vh;
-    margin-left: 8vh;
-    margin-top: 2vh;
-  }
-  
-  .ford{
-    width: 25vh;
-    height: auto;
-    margin-left: 5vh;
-    margin-top: 10vh;
-    margin-right: 5vh;
-    margin-bottom: 5vh;
-  }
-  
-  .forddescription2{
-    position:absolute;
-    width: 30vh;
-    height: auto;
-    font-size: small;
-    top: 40vh;
-    left:12vh;
+.letter {
+    aspect-ratio: 1/1;
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-family: sans-serif;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 4px;
+}
 
-    margin-bottom: 0vh;
-    margin-left:0vh;
-    margin-top: 0vh;
-    margin-right: 0vh;
-  }
-  
-  
-  .sideeye{
-    position: absolute;
-    top:65vh;
-    width: 10vh;
-    height: auto;
-    margin-top: -20vh;
-    margin-bottom: -7vh;
-    margin-left: -5vh;
-  }
-  
-  
-  .sideeye:hover{
-    opacity: 0.5;
-  }
-  
-  @keyframes shake {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    20% { transform: translate(-2px, 2px) rotate(-2deg); }
-    40% { transform: translate(2px, -2px) rotate(2deg); }
-    60% { transform: translate(-2px, 2px) rotate(-2deg); }
-    80% { transform: translate(2px, -2px) rotate(2deg); }
-    100% { transform: translate(0, 0) rotate(0deg); }
-  }
-  
-  .shake {
-    animation: shake 0.5s ease-in-out;
-  }
-  
-  
+.letter.selected {
+    background-color: #ffeb3b; /* Yellow highlight while picking */
+}
+
+.letter.found {
+    background-color: #4caf50; /* Green highlight when word is complete */
+    color: white;
+}
+
+#word-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
 }

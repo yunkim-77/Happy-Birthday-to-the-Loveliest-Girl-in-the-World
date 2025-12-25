@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // 1. Setup Audio
-  const bgMusic = new Audio('assets/music/everything.mp3');
+  const bgMusic = new Audio('assets/audio/everything.mp3');
   bgMusic.loop = true;
 
   // 2. The play logic
@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   playBtn.addEventListener('click', () => {
       // Start the music
+      bgMusic.volume = 0.2;
       bgMusic.play();
 
       // Hide overlay and show content
