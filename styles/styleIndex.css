@@ -1,0 +1,112 @@
+
+.cover .candle{
+    width: 7vh;
+    pointer-events: auto;
+    height: auto;
+    margin-bottom: -2.5vh;
+  }
+  
+  .cover .blow{
+    position: absolute;
+    width: 15vh;
+    top: 20vh;
+    left: 52%;
+    pointer-events: auto;
+    height: auto;
+    margin-left: 0vh;
+    margin-bottom: -2.5vh;
+  }
+  
+  
+  .cover .strawberries{
+    width: 30vh;
+    height: auto;
+    margin-top: -25vh;
+    margin-bottom: -8vh;
+  }
+  
+  .cover .blueberries{
+    width: 20vh;
+    height: auto;
+    margin-top: -5.5vh;
+    margin-bottom: -4.5vh;
+    rotate: 3deg;
+  }
+  
+  
+  .cover .kiwis{
+    width: 10vh;
+    height: auto;
+    margin-top: -20vh;
+    margin-bottom: -5vh;
+    rotate: 30deg;
+  }
+  
+  .cover .mangoes{
+    width: 11vh;
+    height: auto;
+    margin-right: 0.5vh;
+    margin-top: -20vh;
+    margin-bottom: -4.5vh;
+    rotate: 5deg;
+  }
+  
+  
+  .cover .blackberries{
+    width: 13vh;
+    height: auto;
+    margin-top: -20vh;
+    margin-bottom: -5vh;
+  }
+  
+  
+  .cover .oranges{
+    width: 16vh;
+    height: auto;
+    margin-top: -20vh;
+    margin-bottom: -7vh;
+  }
+  
+  
+  
+  .cover .plate {
+    width: 32vh;
+    height: auto;
+    margin-top: -2vh;
+    margin-bottom: -2vh;
+  }
+  
+  
+  
+  /* Your existing font sizes */
+  h1.first { font-size: 5vh;}
+  h1.second { font-size: 2vh;margin-bottom: -1vh;}
+  h1.third { font-size: 2.4vh; margin-bottom: -1vh;}
+  h1.fourth { font-size: 2.8vh; margin-bottom: -2.4vh;}
+  h1.fifth { font-size: 3.2vh; margin-bottom: -2.2vh;}
+  h1.sixth { font-size: 3.6vh; margin-bottom: -2vh;}
+  h1.seventh { font-size: 4vh; margin-bottom: 1vh;}
+  h1.eighth { font-size: 4.4vh; margin-top: -1vh;margin-bottom: -2vh }
+  
+  .page1button{
+    margin-left: 1vh;
+  }
+  .heart {
+    position: fixed;
+    font-size: 26px;
+    pointer-events: none;
+    animation: heartPop 2.5s ease-out forwards;
+  }
+
+  @keyframes heartPop {
+    0% {
+      transform: translateY(0) scale(0.8);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-80vh) scale(1.3);
+      opacity: 0;
+    }
+  }
+  
+    

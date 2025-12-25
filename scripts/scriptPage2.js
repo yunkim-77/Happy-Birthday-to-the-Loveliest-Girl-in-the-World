@@ -8,12 +8,16 @@ document.addEventListener("DOMContentLoaded", () => {
         "assets/images/smiles/smile6.jpeg",
         "assets/images/smiles/smile7.jpeg",
         "assets/images/smiles/smile8.jpeg",
-        "assets/images/smiles/smile9.jpeg"
+        "assets/images/smiles/smile9.jpeg",
+        "assets/images/smiles/smile10.jpeg",
+        "assets/images/smiles/smile11.jpeg",
+        "assets/images/smiles/smile12.jpeg",
+        "assets/images/smiles/smile13.jpeg"
     ];
     
 
     const orbit = document.querySelector(".orbit");
-    const radius = 50;
+    const radius = window.innerWidth * 0.01;    
     let angle = 0;
     let index = 0;
     
@@ -28,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
       orbit.appendChild(wrapper);
     
       const startAngle = angle;
-      angle += 360 / 6;
+      angle += 360 / 8;
       index++;
     
       wrapper.style.transform = `
@@ -37,6 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       `;
     
+      img.style.transform = `rotate(-${startAngle}deg)`;
       wrapper.animate(
         [
           { opacity: 0 },
@@ -45,13 +50,13 @@ document.addEventListener("DOMContentLoaded", () => {
           { opacity: 0 }
         ],
         {
-          duration: 6000,
+          duration: 9000,
           easing: "ease-in-out",
           fill: "forwards"
         }
       );
     
-      setTimeout(() => wrapper.remove(), 6000);
+      setTimeout(() => wrapper.remove(), 9000);
     }
     
     setInterval(spawnSmile, 800);
