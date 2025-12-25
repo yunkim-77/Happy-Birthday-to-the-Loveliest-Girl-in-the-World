@@ -1,63 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
+    // Select all images with a data-sound attribute
+    document.querySelectorAll("img[data-sound]").forEach(img => {
+    
+        const shakeImg = document.getElementById("shake");
 
-    const smileImages = [
-        "assets/images/smiles/smile2.jpeg",
-        "assets/images/smiles/smile3.jpeg",
-        "assets/images/smiles/smile4.jpeg",
-        "assets/images/smiles/smile5.jpeg",
-        "assets/images/smiles/smile6.jpeg",
-        "assets/images/smiles/smile7.jpeg",
-        "assets/images/smiles/smile8.jpeg",
-        "assets/images/smiles/smile9.jpeg",
-        "assets/images/smiles/smile10.jpeg",
-        "assets/images/smiles/smile11.jpeg",
-        "assets/images/smiles/smile12.jpeg",
-        "assets/images/smiles/smile13.jpeg"
-    ];
-    
+      const handleClick = (e) => {
+        e.stopPropagation(); // prevent parent interference
+  
+        // Play the sound
+        const audio = new Audio(img.dataset.sound);
+        audio.volume = 1;
+        audio.currentTime = 0;
+        audio.play().catch(err => console.log("Audio failed:", err));
+        shakeImg.classList.add("shake");
 
-    const orbit = document.querySelector(".orbit");
-    const radius = window.innerWidth * 0.01;    
-    let angle = 0;
-    let index = 0;
+        // Remove the class after the animation ends
+        setTimeout(() => {
+          shakeImg.classList.remove("shake");
+        }, 500); // match duration of CSS animation
     
-    function spawnSmile() {
-      const wrapper = document.createElement("div");
-      wrapper.className = "orbiter";
-    
-      const img = document.createElement("img");
-      img.src = smileImages[index % smileImages.length];
-    
-      wrapper.appendChild(img);
-      orbit.appendChild(wrapper);
-    
-      const startAngle = angle;
-      angle += 360 / 8;
-      index++;
-    
-      wrapper.style.transform = `
-        rotate(${startAngle}deg)
-        translate(${radius}px)
-
-      `;
-    
-      img.style.transform = `rotate(-${startAngle}deg)`;
-      wrapper.animate(
-        [
-          { opacity: 0 },
-          { opacity: 1 },
-          { opacity: 1 },
-          { opacity: 0 }
-        ],
-        {
-          duration: 9000,
-          easing: "ease-in-out",
-          fill: "forwards"
-        }
-      );
-    
-      setTimeout(() => wrapper.remove(), 9000);
-    }
-    
-    setInterval(spawnSmile, 800);
-});
+      };
+  
+      // Attach click handler
+      img.addEventListener("click", handleClick);
+    });
+  });
+  

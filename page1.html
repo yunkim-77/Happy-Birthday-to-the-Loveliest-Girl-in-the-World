@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Twenty ❤️</title>
+  <title>Smiles ❤️</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="style.css" />
@@ -15,18 +15,26 @@
 </head>
 <body>
 
-  <div class="page-content">
-    <h2>You're Twenty?!?</h2>
+  <div id="play-overlay">
+    <button id="play-button">
+      <img src="assets/images/playbutton.png" alt="Play">
+    </button>
+  </div>
 
-    <h3 class="forddescription">This is what it would look like if you got a Ford F-150 every time it was your birthday:</h3>
-    <img src="assets/images/ford.png" class="ford">
+  <div class="page-content page1-content" style="display: none;">
+    <div class="smile-container">
+      <!-- Center image -->
+      <img src="assets/images/smiles/smile1.png" class="center-smile">
+    
+      <!-- Orbiting images -->
+      <div class="orbit">
+        <!-- JS will inject orbiting images here -->
+      </div>
+    </div>
 
-    <img src="assets/images/sideeye.png" id="shake" class="kid">
-    <img src="assets/images/click.png" class="sideeye" id="click" style="cursor:pointer;" data-sound="assets/music/twenty.mp3">
-
-    <h3 class="forddescription2">Approximate Price: $800,000</h3>
-
-    <a href="page2.html" class="next-btn page1button">Next →</a>
+    <h1>Thank you for your beautiful smiles❤️</h1>
+    
+    <a href="page2.html" class="next-btn page1bt">Next →</a>
   </div>
 
 </body>
