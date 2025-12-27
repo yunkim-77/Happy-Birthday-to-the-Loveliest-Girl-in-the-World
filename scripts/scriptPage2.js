@@ -25,6 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         canPlace = false;
                         break;
                     }
+
                 }
 
                 if (canPlace) {
@@ -41,6 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
             for (let c = 0; c < gridSize; c++) {
                 const div = document.createElement("div");
                 div.className = "letter";
+                div.dataset.row = r; // Add this line
+                div.dataset.col = c; // Add this line
                 // Fill null spots with random letters
                 div.textContent = grid[r][c] || "ABCDEFGHIJKLMNOPQRSTUVWXYZ"[Math.floor(Math.random() * 26)];
                 
@@ -54,42 +57,57 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function checkSelected() {
-        const selectedTiles = document.querySelectorAll(".letter.selected");
-        const currentString = Array.from(selectedTiles).map(t => t.textContent).join("");
+        const selectedTiles = Array.from(document.querySelectorAll(".letter.selected"));
+        if (selectedTiles.length === 0) return;
+    
+        // Get the string of currently selected letters
+        const currentString = selectedTiles.map(t => t.textContent).join("");
         
         wordList.forEach(word => {
-            // Check if the selected letters match the word exactly
             if (!foundWords.includes(word) && currentString === word) {
-                foundWords.push(word);
-                
-                // --- Specific Sound Logic ---
-                // This looks for the audio tag with the ID "sound-ILOVEYOU", etc.
-                const sound = document.getElementById(`sound-${word}`);
-                if (sound) {
-                    sound.currentTime = 0; // Reset to start
-                    sound.play();
-                }
-                
-                // Visual feedback: Strike through the word in the list
-                const wordElement = document.getElementById(`word-${word}`);
-                if (wordElement) {
-                    wordElement.style.textDecoration = "line-through";
-                    wordElement.style.color = "gray";
-                }
-                
-                // Change style of letters in the grid
-                selectedTiles.forEach(t => {
-                    t.classList.remove("selected");
-                    t.classList.add("found");
-                });
+                // NEW: Check if the selected tiles are actually in a straight line
+                if (isStraightLine(selectedTiles)) {
+                    foundWords.push(word);
+                    
+                    // Play specific sound
+                    const sound = document.getElementById(`sound-${word}`);
+                    if (sound) { sound.currentTime = 0; sound.play(); }
+                    
+                    // Update UI
+                    document.getElementById(`word-${word}`).style.textDecoration = "line-through";
+                    
+                    selectedTiles.forEach(t => {
+                        t.classList.remove("selected");
+                        t.classList.add("found");
+                    });
     
-                // If all words are found, reveal the Next button
-                if (foundWords.length === wordList.length) {
-                    const nextBtn = document.getElementById("final-next-btn");
-                    if (nextBtn) nextBtn.style.display = "block";
+                    if (foundWords.length === wordList.length) {
+                        document.getElementById("final-next-btn").style.display = "block";
+                    }
                 }
             }
         });
     }
-    setupWordSearch();
+    
+    // Helper function to ensure letters are neighbors in a line
+    function isStraightLine(tiles) {
+        if (tiles.length < 2) return true;
+    
+        // Get coordinates from the dataset we set up in setupWordSearch
+        const coords = tiles.map(t => ({
+            r: parseInt(t.dataset.row),
+            c: parseInt(t.dataset.col)
+        }));
+    
+        const dr = coords[1].r - coords[0].r;
+        const dc = coords[1].c - coords[0].c;
+    
+        // Check if every subsequent tile follows the same direction (step of 1)
+        for (let i = 1; i < coords.length; i++) {
+            if (coords[i].r - coords[i-1].r !== dr || coords[i].c - coords[i-1].c !== dc) {
+                return false;
+            }
+        }
+        return true;
+    }    setupWordSearch();
 });

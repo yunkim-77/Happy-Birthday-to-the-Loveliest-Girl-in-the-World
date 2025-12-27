@@ -1,34 +1,6 @@
 
 @media (min-width: 769px){
 
-  .forddescription{
-    width: 30vh;
-    height: auto;
-    font-size: small;
-    margin-bottom: -10vh;
-    margin-left: 0vh;
-    margin-top: 8vh;
-  }
-  
-  .ford{
-    width: 25vh;
-    height: auto;
-    margin-left: -15vh;
-    margin-top: -2vh;
-    margin-right: 4vh;
-    margin-bottom: 5vh;
-  }
-  
-  .forddescription2{
-    width: 30vh;
-    height: auto;
-    font-size: small;
-    margin-bottom: 0vh;
-    margin-left:0vh;
-    margin-top: 0vh;
-    margin-right: 0vh;
-  }
-  
   
   .sideeye{
     position: absolute;
@@ -56,41 +28,11 @@
   .shake {
     animation: shake 0.5s ease-in-out;
   }
-  
+
 }
 
 @media (max-width: 768px) {
-  .forddescription{
-    width: 25vh;
-    height: auto;
-    font-size: small;
-    margin-bottom: -10vh;
-    margin-left: 8vh;
-    margin-top: 2vh;
-  }
-  
-  .ford{
-    width: 25vh;
-    height: auto;
-    margin-left: 5vh;
-    margin-top: 10vh;
-    margin-right: 5vh;
-    margin-bottom: 5vh;
-  }
-  
-  .forddescription2{
-    position:absolute;
-    width: 30vh;
-    height: auto;
-    font-size: small;
-    top: 40vh;
-    left:12vh;
-
-    margin-bottom: 0vh;
-    margin-left:0vh;
-    margin-top: 0vh;
-    margin-right: 0vh;
-  }
+ 
   
   
   .sideeye{

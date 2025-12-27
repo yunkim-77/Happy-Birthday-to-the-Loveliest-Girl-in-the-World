@@ -33,8 +33,17 @@ document.addEventListener("DOMContentLoaded", () => {
         "assets/images/smiles/smile10.jpeg",
         "assets/images/smiles/smile11.jpeg",
         "assets/images/smiles/smile12.jpeg",
-        "assets/images/smiles/smile13.jpeg"
-    ];
+        "assets/images/smiles/smile13.jpeg",
+        "assets/images/smiles/smile14.jpeg",
+        "assets/images/smiles/smile15.jpeg",
+        "assets/images/smiles/smile16.JPG",
+        "assets/images/smiles/smile17.jpeg",
+        "assets/images/smiles/smile18.jpeg",
+        "assets/images/smiles/smile19.jpeg",
+        "assets/images/smiles/smile20.PNG",
+
+
+      ];
     
 
     const orbit = document.querySelector(".orbit");
