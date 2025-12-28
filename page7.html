@@ -2,22 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>A lil Message ❤️</title>
+  <title>Smiles ❤️</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles/stylePage1.css" />
+
+  <script src="scripts/scriptPage1.js"></script>
+
   <link rel="icon" type="image/png" href="assets/images/heart.png">
 
 </head>
 <body>
 
-  <div class="page-content">
-    <h1 style="font-family:fantasy">Happy Twentieth Birthday!!</h1>
-    <img src = "assets/images/HAPPYBIRTHDAY2.jpg">
-    <h1 style="font-family:fantasy">I love you ❤️</h1>
+  <div id="play-overlay">
+    <button id="play-button">
+      <img src="assets/images/playbutton.png" alt="Play">
+    </button>
+  </div>
 
-    <a href="page6.html" class="prev-btn">← Prev</a>
+  <div class="page-content page1-content" style="display: none;">
+    <div class="smile-container">
+      <!-- Center image -->
+      <img src="assets/images/smiles/smile1.png" class="center-smile">
+    
+      <!-- Orbiting images -->
+      <div class="orbit">
+        <!-- JS will inject orbiting images here -->
+      </div>
+    </div>
 
+    <h1>Thank you for your beautiful smiles❤️</h1>
+
+    <a href="page7.html" class="prev-btn">← Prev</a>
   </div>
 
 </body>
