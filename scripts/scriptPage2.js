@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         let grid = Array(gridSize).fill().map(() => Array(gridSize).fill(null));
 
+
         // Place words into the grid array
         wordList.forEach(word => {
             let placed = false;
@@ -48,6 +49,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 div.textContent = grid[r][c] || "ABCDEFGHIJKLMNOPQRSTUVWXYZ"[Math.floor(Math.random() * 26)];
                 
                 div.addEventListener("click", () => {
+                    // 1. If the letter is already part of a found word, do nothing
+                    if (div.classList.contains("found")) return;
+                
+                    // 2. Otherwise, toggle selection as usual
                     div.classList.toggle("selected");
                     checkSelected();
                 });
@@ -60,12 +65,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const selectedTiles = Array.from(document.querySelectorAll(".letter.selected"));
         if (selectedTiles.length === 0) return;
     
-        // Get the string of currently selected letters
         const currentString = selectedTiles.map(t => t.textContent).join("");
         
         wordList.forEach(word => {
             if (!foundWords.includes(word) && currentString === word) {
-                // NEW: Check if the selected tiles are actually in a straight line
                 if (isStraightLine(selectedTiles)) {
                     foundWords.push(word);
                     
@@ -78,17 +81,19 @@ document.addEventListener("DOMContentLoaded", () => {
                     
                     selectedTiles.forEach(t => {
                         t.classList.remove("selected");
-                        t.classList.add("found");
+                        t.classList.add("found"); // This "locks" the box via the CSS below
                     });
     
                     if (foundWords.length === wordList.length) {
-                        document.getElementById("final-next-btn").style.display = "block";
+                        //document.getElementById("final-next-btn").style.display = "flex";
+                        setTimeout(() => {
+                            if (typeof celebrate === "function") celebrate(); 
+                        },1000);
                     }
                 }
             }
         });
-    }
-    
+    }    
     // Helper function to ensure letters are neighbors in a line
     function isStraightLine(tiles) {
         if (tiles.length < 2) return true;
@@ -111,3 +116,31 @@ document.addEventListener("DOMContentLoaded", () => {
         return true;
     }    setupWordSearch();
 });
+
+function celebrate() {
+    // 1. Play the final sound
+    const finalSound = document.getElementById("sound-final-victory");
+    finalSound.volume = 0.1;
+    if (finalSound) finalSound.play();
+
+    // 2. Create balloons
+    const container = document.getElementById("balloon-container");
+    const colors = ['#ff4d4d', '#ffeb3b', '#4caf50', '#2196f3', '#9c27b0'];
+
+    for (let i = 0; i < 30; i++) {
+        setTimeout(() => {
+            const balloon = document.createElement("div");
+            balloon.className = "balloon";
+            
+            // Randomize appearance
+            balloon.style.left = Math.random() * 100 + "vw";
+            balloon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            balloon.style.opacity = Math.random() * 0.5 + 0.5;
+            
+            container.appendChild(balloon);
+            
+            // Remove from DOM after animation
+            setTimeout(() => balloon.remove(), 4000);
+        }, i * 150); // Stagger the release
+    }
+}

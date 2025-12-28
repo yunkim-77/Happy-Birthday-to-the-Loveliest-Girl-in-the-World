@@ -37,3 +37,31 @@
     padding: 20px;
     font-family: 'Arial', sans-serif;
 }
+
+#balloon-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none; /* Allows clicking through them */
+    overflow: hidden;
+    z-index: 1000;
+}
+
+.balloon {
+    position: absolute;
+    bottom: -100px;
+    width: 50px;
+    height: 70px;
+    background-color: red;
+    border-radius: 50%;
+    animation: floatUp 4s linear forwards;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) translateX(20px);
+        opacity: 0;
+    }
+}

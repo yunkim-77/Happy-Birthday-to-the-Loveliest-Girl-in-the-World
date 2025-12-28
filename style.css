@@ -58,6 +58,25 @@ img, video {
 }
 
 
+/* Next button */
+.prev-btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 24px;
+  background: white;
+  color: #fb7185;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.prev-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+
 .text1{
   width: 20vh;
 }
